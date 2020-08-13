@@ -1,0 +1,17 @@
+{
+  "name": "restapi-jwt-typescript",
+  "version": "1.0.0",
+  "description": "api rest using JSON Web Tokens with node JS and typscript as backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.7"
+  }
+}
