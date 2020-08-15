@@ -1,9 +1,8 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
+import authRoutes from './routes/auth';
 
 const app: Application = express();
-
-import authRoutes from './routes/auth';
 
 // settings
 app.set('port', 4000);

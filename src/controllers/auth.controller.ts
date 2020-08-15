@@ -40,14 +40,19 @@ export const signin = async (req: Request, res: Response) => {
     { _id: user._id },
     process.env.TOKEN_SECRET || 'tokentest',
     {
-      expiresIn: 60,
+      expiresIn: 60 * 60,
     }
   );
 
   res.header('auth-token', token).json(user);
 };
 
-export const profile = (req: Request, res: Response) => {
-  console.log(req.header('auth-token'));
-  res.send('profile');
+export const profile = async (req: Request, res: Response) => {
+  const user = await User.findById(req.userId, { password: 0 });
+  console.log('userid', req.userId);
+  if (!user) {
+    return res.status(404).json('No user found.');
+  }
+
+  res.json(user);
 };

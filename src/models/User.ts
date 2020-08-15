@@ -28,7 +28,7 @@ const userSchema = new Schema({
   },
 });
 
-// create method to encrypt password
+// create method to encrypt | validate password
 userSchema.methods.encryptPassword = async (
   password: string
 ): Promise<string> => {
